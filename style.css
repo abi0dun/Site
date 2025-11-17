@@ -1,0 +1,54 @@
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+   body{
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    background-image: radial-gradient(circle at center, transparent 50%, #cc0055 51%, transparent 52%);
+    background-size: 50px 50px;
+    background-repeat: repeat;
+    background-position: center;
+   }
+   .headerNavBar{
+    padding: 0;
+    position: relative;
+    margin: 25px auto;
+    width: 350px;
+    height: 100px;
+    background-color: transparent;
+     }
+   .headerNavBar .biggest{
+    width: 350px;
+    height: 80px;
+    position: relative;
+
+    /* Real glass effect - more transparent */
+    background: rgba(255, 255, 5, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    clip-path: url(#Mother-clip-box);
+    z-index: 1;
+   }
+   .headerNavBar .switchCircle{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: blue;
+    right: 3px;
+    top: 25px
+   }
+   .headerNavBar .centerContext{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: blue;
+    left: calc(50% - 18px);
+    bottom: 3px 
+   }
