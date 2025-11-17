@@ -1,9 +1,9 @@
 *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-   body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
     margin: 0;
     padding: 0;
     background: #f5f7fa;
@@ -28,8 +28,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    /* Real glass effect - more transparent */
     background: rgba(0, 0, 255, 0.1);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -45,7 +43,12 @@
     border-radius: 50%;
     background: blue;
     right: 3px;
-    top: 25px
+    top: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
    }
    .headerNavBar .centerContext{
     position: absolute;
@@ -56,3 +59,4 @@
     left: calc(50% - 18px);
     bottom: 3px 
    }
+   

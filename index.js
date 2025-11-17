@@ -1,19 +1,21 @@
 var headerNavBar = document.getElementById("headerNavBar");
 var centerContext = document.getElementById("centerContext");
 var switchCircle = document.getElementById("switchCircle");
-var borderStroke = document.getElementById("borderStroke")
+var borderStroke = document.getElementById("borderStroke");
+var bulb = document.getElementById("light-bulb");
+var moon = document.getElementById("dark-moon");
 var svg1 = document.getElementById("svg1");
 var biggest = document.getElementById("biggest");
 var smallM = window.matchMedia("(min-width: 400px)");
 var desktop = window.matchMedia("(min-width: 800px)");
 var tablet = window.matchMedia("(min-width: 600px)");
+var isLight = true;
 
 svg1.setAttribute("width", "350");
 svg1.setAttribute("height", "80");
 svg1.setAttribute("viewBox", "0 0 350 80");
 
 if(smallM.matches){
-    svg1.
     headerNavBar.style.width = "400px";
     biggest.style.width = "400px";
     biggest.style.clipPath = "url(#Mother-clip-box2)";
@@ -24,6 +26,17 @@ if(smallM.matches){
 
 }
 
-switchCircle.addEventListener("click", function() {
-    
-});
+ function sch() {
+isLight = !isLight;
+console.log(isLight);
+if(isLight){
+bulb.style.display = "none";
+moon.style.display = "block";
+//centerContext.style.background = "rgba(255, 255, 255, 0.8)";
+}else{
+bulb.style.display = "block";
+moon.style.display = "none";
+//centerContext.style.background = "rgba(0, 0, 0, 0.8)";
+}
+//console.log(isLight);
+};
