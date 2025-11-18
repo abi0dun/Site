@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+@property --first {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@property --second {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
 body{
     margin: 0;
     padding: 0;
@@ -28,13 +38,18 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-        background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first), rgba(0, 0, 255, 0.1) var(--second));
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     filter: drop-shadow(2 2 5 3.5px black);
     clip-path: url(#Mother-clip-box);
     z-index: 1;
+    animation-name: mytopbaranimation;
+    animation-duration: 10.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
    }
    .headerNavBar .switchCircle{
     position: absolute;
@@ -68,4 +83,22 @@ body{
     border: 1px solid grey;
 
    }
-   
+
+   @keyframes mytopbaranimation {
+    25%{
+          --first: 0%;
+          --second: 100%;
+    }
+    50%{
+          --first: 50%;
+          --second: 100%;
+    }
+    75%{
+          --first: 100%;
+          --second: 100%;
+    }
+    100%{
+          --first: 0%;
+          --second: 100%;
+    }
+   }
