@@ -28,7 +28,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 255, 0.1);
+        background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -41,7 +41,7 @@ body{
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: rgba(121, 90, 93,0.2);
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
     right: 2.4px;
     top: 22px;
     cursor: pointer;
@@ -49,18 +49,22 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 10;
+    border: 1px solid grey
    }
    .headerNavBar .centerContext{
     position: absolute;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: blue;
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     left: calc(50% - 27.6px);
     bottom: -8px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    border: 1px solid
    }
    
