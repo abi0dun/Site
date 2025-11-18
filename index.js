@@ -21,7 +21,7 @@ if(smallM.matches){
     biggest.style.clipPath = "url(#Mother-clip-box2)";
     svg1.setAttribute("width", "400");
     svg1.setAttribute("viewBox", "0 0 400 80");
-    borderStroke.setAttribute('d', 'M 45.71,0 A 45.71,40 0 0 0 0,40 A 45.71,40 0 0 0 45.71,80 H 165.71 A 30,30 0 0 1 205.71,50 A 30,30 0 0 1 245.71,80 H 400 V 40 A 22.86,20 0 0 1 377.14,60 A 22.86,20 0 0 1 354.29,40 A 22.86,20 0 0 1 377.14,20 A 22.86,20 0 0 1 400,40 V 0 Z')
+    borderStroke.setAttribute('d', 'M 40,0 A 40,40 0 0 0 0,40 40,40 0 0 0 40,80 H 170 A 30,30 0 0 1 200,50 30,30 0 0 1 230,80 H 400 V 40 A 20,20 0 0 1 380,60 20,20 0 0 1 360,40 20,20 0 0 1 380,20 20,20 0 0 1 400,40 V 0 Z')
 }else if(tablet.mathes){
 
 }

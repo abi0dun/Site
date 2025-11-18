@@ -38,12 +38,12 @@ body{
    }
    .headerNavBar .switchCircle{
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    right: 3px;
-    top: 25px;
+    background: rgba(121, 90, 93,0.2);
+    right: 2.4px;
+    top: 22px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -52,11 +52,15 @@ body{
    }
    .headerNavBar .centerContext{
     position: absolute;
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: blue;
-    left: calc(50% - 18px);
-    bottom: 3px 
+    left: calc(50% - 27.6px);
+    bottom: -8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
    }
    

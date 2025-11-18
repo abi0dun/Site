@@ -19,20 +19,7 @@
 
                     <clipPath id="Mother-clip-box2" clipPathUnits="userSpaceOnUse">
                         <path id="boxPath2"
-                             d="M 45.71,0 
-                                A 45.71,40 0 0 0 0,40 
-                                A 45.71,40 0 0 0 45.71,80 
-                                H 165.71 
-                                A 30,30 0 0 1 205.71,50 
-                                A 30,30 0 0 1 245.71,80 
-                                H 400 
-                                V 40 
-                                A 22.86,20 0 0 1 377.14,60 
-                                A 22.86,20 0 0 1 354.29,40 
-                                A 22.86,20 0 0 1 377.14,20 
-                                A 22.86,20 0 0 1 400,40 
-                                V 0 
-                                Z"/>
+                             d="M 40,0 A 40,40 0 0 0 0,40 40,40 0 0 0 40,80 H 170 A 30,30 0 0 1 200,50 30,30 0 0 1 230,80 H 400 V 40 A 20,20 0 0 1 380,60 20,20 0 0 1 360,40 20,20 0 0 1 380,20 20,20 0 0 1 400,40 V 0 Z"/>
                     </clipPath>
                 </defs>
                  <path id="borderStroke"
@@ -44,7 +31,38 @@
 
         </div>
 
-        <div id="centerContext" class="centerContext"></div>
+        <div id="centerContext" class="centerContext">
+          <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="gridTitle gridDesc" style="width:var(--size, 24px); height:var(--size, 24px);">
+            <title id="gridTitle">Amala-ati-ewedu</title>
+            <desc id="gridDesc">Two By two rounded square with top-right rotated diamond</desc>
+          <style>
+            svg {
+              --size: 40px;
+              display: block;
+              shape-rendering: geometricPrecision;
+            }
+            .stroke{
+              fill: none;
+              stroke: currentColor;
+              stroke-width: 3;
+            }
+            .diamond {
+              transform-origin: center;
+              transform: rotate(0deg);
+            } 
+          </style>
+          <!-- top left -->
+          <rect x="6" y="6" width="22" height="22" rx="5" ry="5" class="stroke"/>
+          <!-- top right rotated diamond -->
+          <g transform="translate(47, 17) rotate(30)">
+            <rect x="-11" y="-11" width="22" height="22" rx="5" ry="5" class="stroke"/>
+          </g>
+          <!-- bottom left -->
+          <rect x="6" y="36" width="20" height="22" rx="5" ry="5" class="stroke" />
+          <!-- bottom right -->
+          <rect x="36" y="36" width="22" height="22" rx="5" ry="5" class="stroke"/>
+          </svg>
+        </div>
         <!-- Theme switching icon -->
         <div id="switchCircle" class="switchCircle" onclick="sch()">
           <!-- light- bulb -->
