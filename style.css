@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --bg-primary-color: #f5f7fa;
+  --bg-secondary-color: #cc0055;
+  --circle-border-color: grey;
+}
 @property --first {
   syntax: '<percentage>';
   inherits: false;
@@ -13,11 +18,21 @@
   inherits: false;
   initial-value: 100%;
 }
+html[data-theme='light'] {
+  --bg-primary-color: #f5f7fa;
+  --bg-secondary-color: #cc0055;
+  --circle-border-color: grey;
+}
+html[data-theme='dark'] {
+  --bg-primary-color: #1e1e1e;
+  --bg-secondary-color: #5500cc;
+  --circle-border-color: lightgrey;
+}
 body{
     margin: 0;
     padding: 0;
-    background: #f5f7fa;
-    background-image: radial-gradient(circle at center, transparent 50%, #cc0055 51%, transparent 52%);
+    background: var(--bg-primary-color);
+    background-image: radial-gradient(circle at center, transparent 50%, var(--bg-secondary-color) 51%, transparent 52%);
     background-size: 50px 50px;
     background-repeat: repeat;
     background-position: center;
@@ -46,7 +61,7 @@ body{
     clip-path: url(#Mother-clip-box);
     z-index: 1;
     animation-name: mytopbaranimation;
-    animation-duration: 10.5s;
+    animation-duration: 30s;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
@@ -56,7 +71,7 @@ body{
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first) rgba(0, 0, 255, 0.1) var(--second));
     right: 2.4px;
     top: 22px;
     cursor: pointer;
@@ -64,14 +79,19 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 10;
-    border: 1px solid grey
+    border: 1px solid grey;
+    animation-name: mytopbaranimation;
+    animation-duration: 30s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
    }
    .headerNavBar .centerContext{
     position: absolute;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(0, 0, 255, 0.2));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first), rgba(0, 0, 255, 0.2) var(--second));
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     left: calc(50% - 27.6px);
@@ -81,6 +101,11 @@ body{
     align-items: center;
     z-index: 10;
     border: 1px solid grey;
+    animation-name: mytopbaranimation;
+    animation-duration: 30s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 
    }
 

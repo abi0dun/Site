@@ -9,6 +9,7 @@ var biggest = document.getElementById("biggest");
 var smallM = window.matchMedia("(min-width: 400px)");
 var desktop = window.matchMedia("(min-width: 800px)");
 var tablet = window.matchMedia("(min-width: 600px)");
+const html = document.documentElement;
 var isLight = true;
 
 svg1.setAttribute("width", "350");
@@ -27,16 +28,27 @@ if(smallM.matches){
 }
 
  function sch() {
+
 isLight = !isLight;
 console.log(isLight);
+
+
+
 if(isLight){
+initTheme('light');
 bulb.style.display = "none";
 moon.style.display = "block";
 //centerContext.style.background = "rgba(255, 255, 255, 0.8)";
 }else{
+initTheme('dark');
 bulb.style.display = "block";
 moon.style.display = "none";
 //centerContext.style.background = "rgba(0, 0, 0, 0.8)";
 }
 //console.log(isLight);
 };
+
+function initTheme(theme){
+html.setAttribute('data-theme', theme);
+}
+initTheme('light');
