@@ -65,6 +65,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 10;
-    border: 1px solid
+    border: 1px solid grey;
+
    }
    
