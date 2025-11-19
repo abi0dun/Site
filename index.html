@@ -42,7 +42,7 @@
               shape-rendering: geometricPrecision;
             }
             .stroke{
-              fill: none;
+              fill: var(--f);
               stroke: currentColor;
               stroke-width: 3;
             }
@@ -50,12 +50,13 @@
               transform-origin: center;
               transform: rotate(0deg);
             } 
+            
           </style>
           <!-- top left -->
           <rect x="6" y="6" width="22" height="22" rx="5" ry="5" class="stroke"/>
           <!-- top right rotated diamond -->
           <g transform="translate(47, 17) rotate(30)">
-            <rect x="-11" y="-11" width="22" height="22" rx="5" ry="5" class="stroke"/>
+            <rect x="-11" y="-11" width="22" height="22" rx="5" ry="5" class="stroke" />
           </g>
           <!-- bottom left -->
           <rect x="6" y="36" width="20" height="22" rx="5" ry="5" class="stroke" />

@@ -39,9 +39,10 @@ html[data-theme='light'] {
   --bg-secondary: #cc0055;
   --circle-border: #666;
 
-  --panel-glass-light: rgba(255, 255, 255, 0.01);
-  --panel-glass-dark: rgba(65, 65, 66, 0.01);
+  --panel-glass-light: rgba(255, 255, 255, 0.001);
+  --panel-glass-dark: rgba(65, 65, 66, 0.001);
   --shadow-color: rgba(0, 0, 0, 0.25);
+  --f: black;
 }
 
 /* DARK MODE — HACKER STYLE */
@@ -54,6 +55,7 @@ html[data-theme='dark'] {
   --panel-glass-dark: rgba(0, 255, 120, 0.15);
 
   --shadow-color: rgba(0, 255, 120, 0.3);
+  --f:none;
 }
 
 /* ============================
@@ -106,8 +108,8 @@ body {
   position: absolute;
   inset: 0;
 
-  background-image: linear-gradient(
-    to right,
+  background-image: radial-gradient(
+    circle at center,
     var(--panel-glass-light) var(--first),
     var(--panel-glass-dark) var(--second)
   );
@@ -138,15 +140,15 @@ body {
     var(--panel-glass-dark)
   );
 
-  right: 2.4px;
-  top: 22px;
+  left: 362.9px; 
+  top: 22.49px;
   cursor: pointer;
 
   border: 1px solid var(--circle-border);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  z-index: 20;
   box-shadow: 0 0 8px var(--shadow-color);
 }
 
@@ -176,9 +178,6 @@ body {
   box-shadow: 0 0 12px var(--shadow-color);
 }
 
-/* ============================
-   ANIMATION
-============================ */
 @keyframes cyberBars {
   0% {
     --first: 0%;
