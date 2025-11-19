@@ -174,13 +174,13 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 12px var(--shadow-color);
-  z-index: 5;
+  z-index: 5555;
 }
 .headerNavBar .centerContext .context {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  top: calc(50vh - 300px);
+  width: 100vw;
+  height: calc(100vh - 140px);
+  border-radius: 0%;
+  top: 55px;
   position: absolute;
   background-image: linear-gradient(
     to right,
@@ -192,7 +192,7 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid var(--circle-border);
   box-shadow: 0 0 8px var(--shadow-color);
-  z-index: 10;
+  z-index: 1000;
 }
 
 @keyframes cyberBars {

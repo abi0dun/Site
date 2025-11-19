@@ -11,6 +11,7 @@ var desktop = window.matchMedia("(min-width: 800px)");
 var tablet = window.matchMedia("(min-width: 600px)");
 const html = document.documentElement;
 var isLight = true;
+var isContextOpen = false;
 
 svg1.setAttribute("width", "350");
 svg1.setAttribute("height", "80");
@@ -29,12 +30,8 @@ if(smallM.matches){
 }
 
  function sch() {
-
 isLight = !isLight;
 console.log(isLight);
-
-
-
 if(isLight){
 initTheme('light', "grey");
 bulb.style.display = "none";
@@ -48,10 +45,13 @@ moon.style.display = "none";
 }
 //console.log(isLight);
 };
-
 function initTheme(theme, c){
 html.setAttribute('data-theme', theme);
 console.log(c)
 borderStroke.setAttribute("stroke", c)
 }
 initTheme('light', "grey");
+
+centerContext.addEventListener('onClick', ()=>{
+    console.log('i have been clicked')
+})
