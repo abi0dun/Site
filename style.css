@@ -137,8 +137,8 @@ body {
     var(--panel-glass-dark)
   );
 
-  right: 2.4px;
-  top: 22px;
+  right: 2.2px;
+  top: 22.5px;
 
   cursor: pointer;
 
@@ -168,7 +168,7 @@ body {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   left: calc(50% - 27.5px);
-  bottom: -8px;
+  top: 53px;
   border: 1px solid var(--circle-border);
   display: flex;
   align-items: center;
