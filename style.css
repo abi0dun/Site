@@ -1,13 +1,64 @@
-*{
+/* ============================
+   GLOBAL RESETS
+============================ */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root{
-  --bg-primary-color: #f5f7fa;
-  --bg-secondary-color: #cc0055;
-  --circle-border-color: grey;
+
+/* Hacker-ish default font */
+body {
+  font-family: Consolas, "Courier New", monospace;
+  transition: background 1.5s ease, color 0.4s ease;
 }
+
+
+:root {
+  /* light theme defaults */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #cc0055;
+  --circle-border: #666;
+  --panel-glass-light: rgba(255, 255, 255, 0.12);
+  --panel-glass-dark: rgba(65, 65, 66, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+
+  /* hacker mode enhancements */
+  --neon: #00ff88;
+  --scanline: rgba(0, 0, 0, 0.03);
+
+  --grid-size: 50px;
+
+  /* animated gradient vars */
+  --first: 0%;
+  --second: 100%;
+}
+html[data-theme='light'] {
+  /* LIGHT MODE — DEFAULT STYLE */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #cc0055;
+  --circle-border: #666;
+
+  --panel-glass-light: rgba(255, 255, 255, 0.01);
+  --panel-glass-dark: rgba(65, 65, 66, 0.01);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+/* DARK MODE — HACKER STYLE */
+html[data-theme='dark'] {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #00ff88; /* hacking green */
+  --circle-border: #00ff88;
+
+  --panel-glass-light: rgba(0, 255, 120, 0.05);
+  --panel-glass-dark: rgba(0, 255, 120, 0.15);
+
+  --shadow-color: rgba(0, 255, 120, 0.3);
+}
+
+/* ============================
+   CUSTOM PROPERTIES REGISTRATION
+============================ */
 @property --first {
   syntax: '<percentage>';
   inherits: false;
@@ -18,112 +69,124 @@
   inherits: false;
   initial-value: 100%;
 }
-html[data-theme='light'] {
-  --bg-primary-color: #f5f7fa;
-  --bg-secondary-color: #cc0055;
-  --circle-border-color: grey;
+
+/* ============================
+   BACKGROUND GRID
+============================ */
+body {
+  background: var(--bg-primary);
+  background-image: 
+    linear-gradient(var(--scanline) 1px, transparent 1px),
+    radial-gradient(circle at center,
+      transparent 50%,
+      var(--bg-secondary) 51%,
+      transparent 52%);
+  background-size:
+    100% 2px,
+    var(--grid-size) var(--grid-size);
+  background-repeat: repeat;
 }
-html[data-theme='dark'] {
-  --bg-primary-color: #1e1e1e;
-  --bg-secondary-color: #5500cc;
-  --circle-border-color: lightgrey;
+
+/* ============================
+   NAV BAR STRUCTURE
+============================ */
+.headerNavBar {
+  position: relative;
+  margin: 25px auto;
+  width: 350px;
+  height: 100px;
 }
-body{
-    margin: 0;
-    padding: 0;
-    background: var(--bg-primary-color);
-    background-image: radial-gradient(circle at center, transparent 50%, var(--bg-secondary-color) 51%, transparent 52%);
-    background-size: 50px 50px;
-    background-repeat: repeat;
-    background-position: center;
-   }
-   .headerNavBar{
-    padding: 0;
-    position: relative;
-    margin: 25px auto;
-    width: 350px;
-    height: 100px;
-    background-color: transparent;
-     }
 
+/* ============================
+   THE BIG MAIN PANEL
+============================ */
+.headerNavBar .biggest {
+  width: 350px;
+  height: 80px;
+  position: absolute;
+  inset: 0;
 
-   .headerNavBar .biggest{
-    width: 350px;
-    height: 80px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first), rgba(0, 0, 255, 0.1) var(--second));
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-    filter: drop-shadow(2 2 5 3.5px black);
-    clip-path: url(#Mother-clip-box);
-    z-index: 1;
-    animation-name: mytopbaranimation;
-    animation-duration: 30s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-   }
-   .headerNavBar .switchCircle{
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first) rgba(0, 0, 255, 0.1) var(--second));
-    right: 2.4px;
-    top: 22px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    border: 1px solid grey;
-    animation-name: mytopbaranimation;
-    animation-duration: 30s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-   }
-   .headerNavBar .centerContext{
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0.1) var(--first), rgba(0, 0, 255, 0.2) var(--second));
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    left: calc(50% - 27.6px);
-    bottom: -8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    border: 1px solid grey;
-    animation-name: mytopbaranimation;
-    animation-duration: 30s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+  background-image: linear-gradient(
+    to right,
+    var(--panel-glass-light) var(--first),
+    var(--panel-glass-dark) var(--second)
+  );
 
-   }
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
-   @keyframes mytopbaranimation {
-    25%{
-          --first: 0%;
-          --second: 100%;
-    }
-    50%{
-          --first: 50%;
-          --second: 100%;
-    }
-    75%{
-          --first: 100%;
-          --second: 100%;
-    }
-    100%{
-          --first: 0%;
-          --second: 100%;
-    }
-   }
+  box-shadow: 0 8px 20px var(--shadow-color);
+
+  clip-path: url(#Mother-clip-box);
+  z-index: 1;
+
+  animation: cyberBars 14s infinite alternate ease-in-out;
+}
+
+/* ============================
+   SWITCH BUTTON CIRCLE
+============================ */
+.headerNavBar .switchCircle {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  background-image: linear-gradient(
+    to right,
+    var(--panel-glass-light),
+    var(--panel-glass-dark)
+  );
+
+  right: 2.4px;
+  top: 22px;
+  cursor: pointer;
+
+  border: 1px solid var(--circle-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 8px var(--shadow-color);
+}
+
+/* ============================
+   CENTER CIRCLE
+============================ */
+.headerNavBar .centerContext {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  background-image: linear-gradient(
+    to right,
+    var(--panel-glass-light),
+    var(--panel-glass-dark)
+  );
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  left: calc(50% - 27.5px);
+  bottom: -8px;
+  border: 1px solid var(--circle-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+/* ============================
+   ANIMATION
+============================ */
+@keyframes cyberBars {
+  0% {
+    --first: 0%;
+    --second: 100%;
+  }
+ 
+  100% {
+    --first: 100%;
+    --second: 0%;
+  }
+}

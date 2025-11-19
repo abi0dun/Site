@@ -22,6 +22,7 @@ if(smallM.matches){
     biggest.style.clipPath = "url(#Mother-clip-box2)";
     svg1.setAttribute("width", "400");
     svg1.setAttribute("viewBox", "0 0 400 80");
+    
     borderStroke.setAttribute('d', 'M 40,0 A 40,40 0 0 0 0,40 40,40 0 0 0 40,80 H 170 A 30,30 0 0 1 200,50 30,30 0 0 1 230,80 H 400 V 40 A 20,20 0 0 1 380,60 20,20 0 0 1 360,40 20,20 0 0 1 380,20 20,20 0 0 1 400,40 V 0 Z')
 }else if(tablet.mathes){
 
@@ -35,12 +36,12 @@ console.log(isLight);
 
 
 if(isLight){
-initTheme('light');
+initTheme('light', "grey");
 bulb.style.display = "none";
 moon.style.display = "block";
 //centerContext.style.background = "rgba(255, 255, 255, 0.8)";
 }else{
-initTheme('dark');
+initTheme('dark', "#00ff88");
 bulb.style.display = "block";
 moon.style.display = "none";
 //centerContext.style.background = "rgba(0, 0, 0, 0.8)";
@@ -48,7 +49,9 @@ moon.style.display = "none";
 //console.log(isLight);
 };
 
-function initTheme(theme){
+function initTheme(theme, c){
 html.setAttribute('data-theme', theme);
+console.log(c)
+borderStroke.setAttribute("stroke", c)
 }
-initTheme('light');
+initTheme('light', "grey");
