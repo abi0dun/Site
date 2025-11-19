@@ -125,9 +125,6 @@ body {
   animation: cyberBars 14s infinite alternate ease-in-out;
 }
 
-/* ============================
-   SWITCH BUTTON CIRCLE
-============================ */
 .headerNavBar .switchCircle {
   position: absolute;
   width: 35px;
@@ -140,8 +137,9 @@ body {
     var(--panel-glass-dark)
   );
 
-  left: 362.9px; 
-  top: 22.49px;
+  right: 2.4px;
+  top: 22px;
+
   cursor: pointer;
 
   border: 1px solid var(--circle-border);
