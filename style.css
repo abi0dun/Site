@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --webkit-tap-highlight-color: none;
+  --webkit-touch-callout: none;
+  user-select: none;
 }
 
 /* Hacker-ish default font */
@@ -60,9 +63,7 @@ html[data-theme='dark'] {
   --f:none;
 }
 
-/* ============================
-   CUSTOM PROPERTIES REGISTRATION
-============================ */
+
 @property --first {
   syntax: '<percentage>';
   inherits: false;
@@ -74,14 +75,9 @@ html[data-theme='dark'] {
   initial-value: 100%;
 }
 
-.sb{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  
-}
+/* ============================
+   BACKGROUND GRID
+============================ */
 body {
   background: var(--bg-primary);
   background-image: 
@@ -177,14 +173,14 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 12px var(--shadow-color);
-  z-index: 10;
+  z-index: 5555;
   cursor: pointer;
 }
- .context-grid {
-  width: 100%;
-  height: 400px;
+.headerNavBar .centerContext .context-grid {
+  width: 100vw;
+  height: calc(100vh - 150px);
   border-radius: 0%;
-  top: 150px;
+  top: 65px;
   position: absolute;
   /*background-image: linear-gradient(
     to right,
@@ -203,9 +199,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
- 
+  gap: 40px;
 }
- .context-grid .icon-wrapper{
+.headerNavBar .centerContext .context-grid .icon-wrapper{
 position: relative;
 display: flex;
 flex-direction: column;
@@ -213,7 +209,7 @@ align-items: center;
 cursor: pointer;
 }
 
- .context-grid .icon-wrapper .icon-frame{
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame{
 position: relative;
 width: 100px;
 height: 100px;
@@ -225,7 +221,7 @@ background: transparent;
 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 
- .context-grid .icon-wrapper .icon-frame::before{
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame::before{
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -234,7 +230,7 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   transition: all 0.4s ease;
 }
 
- .context-grid .icon-wrapper .icon-frame::after{
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame::after{
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -243,7 +239,7 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   transition: all 0.4s ease;
 }
 
- .context-grid .icon-wrapper .icon-frame .rotating-ring{
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .rotating-ring{
   position: absolute;
   inset: -8px;
   border-radius: 50%;
@@ -254,29 +250,30 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 }
 
-.context-grid .icon-wrapper:hover .icon-frame{
+.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame{
   transform: scale(1.1);
 }
-.context-grid .icon-wrapper:hover .icon-frame::before{
+.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame::before{
   border-color: var(--bg-secondary);
   border-width: 3px;
   box-shadow: 0 0 20px var(--bg-secondary), 0 0 40px var(--bg-secondary) 60, inset 0 0 10px var(--bg-secondary)20;
 }
 
- .context-grid .icon-wrapper:hover .icon-frame::after{
+.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame::after{
   border-color: var(--bg-secondary);
   opacity: 0.8;
   box-shadow: 0 0 10px var(--bg-secondary), 0 0 20px var(--bg-secondary);
   inset: 12px;
 }
- .context-grid .icon-wrapper:hover .icon-frame .rotating-ring{
+
+.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame .rotating-ring{
   border-color: var(--bg-secondary);
   box-shadow: 0 0 15px var(--bg-secondary), 0 0 30px var(--bg-secondary);
   opacity: 1;
   animation-duration: 10s;
   filter: drop-shadow(0 0 6px var(--bg-secondary));
 }
- .context-grid .icon-wrapper .icon-frame .orbital-dot{
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot{
   position: absolute;
   width: 6px;
   height: 6px;
@@ -284,22 +281,22 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   background: var(--bg-secondary);
   box-shadow: 0 0 8px var(--bg-secondary), 0 0 16px var(--bg-secondary);
 }
- .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(1){
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(1){
   top: -2.5px;
   left: 50%;
   transform: translateX(-50%);
 }
- .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(2){
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(2){
   bottom: -2.5px;
   left: 50%;
   transform: translateX(-50%);
 }
-  .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(3){
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(3){
   left: -2.5px;
   top: 50%;
   transform: translateY(-50%);
 }
-  .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(4){
+.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(4){
   right: -2.5px;
   top: 50%;
   transform: translateY(-50%);
