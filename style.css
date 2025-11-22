@@ -172,20 +172,22 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 12px var(--shadow-color);
-  z-index: 5555;
+  z-index: 10;
   cursor: pointer;
 }
-.headerNavBar .centerContext .context-grid {
+ .context-grid {
   width: 100vw;
-  height: calc(100vh - 10px);
+  height: calc(100vh - 135px);
   border-radius: 0%;
-  top: -75px;
+  bottom: 0px;
   position: absolute;
-  background-image: linear-gradient(
+  /*background-image: linear-gradient(
     to right,
     var(--panel-glass-light),
     var(--panel-glass-dark)
-  );
+
+  );*/
+  background: transparent;
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -198,7 +200,7 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper{
+ .context-grid .icon-wrapper{
 position: relative;
 display: flex;
 flex-direction: column;
@@ -206,7 +208,7 @@ align-items: center;
 cursor: pointer;
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame{
+ .context-grid .icon-wrapper .icon-frame{
 position: relative;
 width: 100px;
 height: 100px;
@@ -218,7 +220,7 @@ background: transparent;
 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame::before{
+ .context-grid .icon-wrapper .icon-frame::before{
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -227,7 +229,7 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   transition: all 0.4s ease;
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame::after{
+ .context-grid .icon-wrapper .icon-frame::after{
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -236,7 +238,7 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   transition: all 0.4s ease;
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .rotating-ring{
+ .context-grid .icon-wrapper .icon-frame .rotating-ring{
   position: absolute;
   inset: -8px;
   border-radius: 50%;
@@ -247,30 +249,29 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame{
+.context-grid .icon-wrapper:hover .icon-frame{
   transform: scale(1.1);
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame::before{
+.context-grid .icon-wrapper:hover .icon-frame::before{
   border-color: var(--bg-secondary);
   border-width: 3px;
   box-shadow: 0 0 20px var(--bg-secondary), 0 0 40px var(--bg-secondary) 60, inset 0 0 10px var(--bg-secondary)20;
 }
 
-.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame::after{
+ .context-grid .icon-wrapper:hover .icon-frame::after{
   border-color: var(--bg-secondary);
   opacity: 0.8;
   box-shadow: 0 0 10px var(--bg-secondary), 0 0 20px var(--bg-secondary);
   inset: 12px;
 }
-
-.headerNavBar .centerContext .context-grid .icon-wrapper:hover .icon-frame .rotating-ring{
+ .context-grid .icon-wrapper:hover .icon-frame .rotating-ring{
   border-color: var(--bg-secondary);
   box-shadow: 0 0 15px var(--bg-secondary), 0 0 30px var(--bg-secondary);
   opacity: 1;
   animation-duration: 10s;
   filter: drop-shadow(0 0 6px var(--bg-secondary));
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot{
+ .context-grid .icon-wrapper .icon-frame .orbital-dot{
   position: absolute;
   width: 6px;
   height: 6px;
@@ -278,26 +279,27 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   background: var(--bg-secondary);
   box-shadow: 0 0 8px var(--bg-secondary), 0 0 16px var(--bg-secondary);
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(1){
-  top: -3px;
+ .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(1){
+  top: -2.5px;
   left: 50%;
   transform: translateX(-50%);
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(2){
-  bottom: -3px;
+ .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(2){
+  bottom: -2.5px;
   left: 50%;
   transform: translateX(-50%);
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(3){
-  left: -3px;
+  .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(3){
+  left: -2.5px;
   top: 50%;
   transform: translateY(-50%);
 }
-.headerNavBar .centerContext .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(4){
-  right: -3px;
+  .context-grid .icon-wrapper .icon-frame .orbital-dot:nth-child(4){
+  right: -2.5px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 @keyframes ring-rotate {
   from{
     transform: rotate(0deg);
