@@ -176,11 +176,11 @@ body {
   cursor: pointer;
 }
  .context-grid {
-  width: 100vw;
+  width: 100%;
   height: calc(100% - 135px);
   border-radius: 0%;
   top: 150px;
-  position: absolute;
+  position: fixed;
   /*background-image: linear-gradient(
     to right,
     var(--panel-glass-light),
