@@ -42,8 +42,8 @@
               shape-rendering: geometricPrecision;
             }
             .stroke{
-              fill: var(--f);
-              stroke: currentColor;
+              fill: var(--bg-tettiary);
+              stroke: var(--bg-tettiary);
               stroke-width: 3;
             }
             .diamond {
@@ -63,27 +63,40 @@
           <!-- bottom right -->
           <rect x="36" y="36" width="22" height="22" rx="5" ry="5" class="stroke"/>
           </svg>
-          <div class="context"></div>
+          <div class="context-grid">
+            <div class="icon-wrapper">
+              <div class="icon-frame">
+                <div class="rotating-ring"></div>
+                <div class="orbital-dot"></div>
+                <div class="orbital-dot"></div>
+                <div class="orbital-dot"></div>
+                <div class="orbital-dot"></div>
+                <svg></svg>
+
+              </div>
+              <span>Contact</span>
+            </div>
+          </div>
         </div>
         <!-- Theme switching icon -->
         <div id="switchCircle" class="switchCircle" onclick="sch()">
           <!-- light- bulb -->
            <svg id="light-bulb" class="icon" viewBox="0 0 24 24" fill="none"  style="display:none;" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 21h6M12 3v1M12 20v1M4.22 4.22l.71.71M18.36 18.36l.71.71M1 12h1M22 12h1M4.22 19.78l.71-.71M18.36 5.64l.71-.71" 
-                      stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="12" cy="12" r="4" fill="#ffd700" opacity="0.8">
+                      stroke="var(--bg-tettiary)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="4" fill="var(--bg-tettiary)" opacity="0.8">
                     <animate attributeName="r" values="4; 4.5; 4" dur="1.5s" repeatCount="indefinite"/>
                     <animate attributeName="opacity" values="0.8; 1; 0.8" dur="1.5s" repeatCount="indefinite"/>
                 </circle>
                 <path d="M9 17h6a2 2 0 0 0 2-2v-1a5 5 0 1 0-10 0v1a2 2 0 0 0 2 2z" 
-                      fill="#ffd700" opacity="0.6"/>
+                      fill="var(--bg-tettiary)" opacity="0.6"/>
             </svg>
           <!-- Moon == dark -->
           <svg id="dark-moon" class="icon" viewBox="0 0 24 24" fill="none">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="brown" stroke="#b0b0b0" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="var(--bg-tettiary)" stroke="#b0b0b0" stroke-width="1.5">
             <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
-            <circle cx="17" cy="7" r="1" fill="d0d0d0" opacity="0.8"/>
-            <circle cx="14" cy="5" r="0.5" fill="d0d0d0" opacity="0.6"/>
+            <circle cx="17" cy="7" r="1" fill="var(--bg-tettiary)" opacity="0.8"/>
+            <circle cx="14" cy="5" r="0.5" fill="var(--bg-tettiary)" opacity="0.6"/>
             </path>
           </svg>
         </div>

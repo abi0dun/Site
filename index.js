@@ -52,6 +52,6 @@ borderStroke.setAttribute("stroke", c)
 }
 initTheme('light', "grey");
 
-centerContext.addEventListener('onClick', ()=>{
+centerContext.addEventListener('click', ()=>{
     console.log('i have been clicked')
 })
