@@ -177,7 +177,7 @@ body {
 }
  .context-grid {
   width: 100vw;
-  height: calc(100vh - 135px);
+  height: calc(100% - 135px);
   border-radius: 0%;
   bottom: 0px;
   position: absolute;
