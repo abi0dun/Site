@@ -179,7 +179,7 @@ body {
   width: 100vw;
   height: calc(100% - 135px);
   border-radius: 0%;
-  bottom: 0px;
+  top: 150px;
   position: absolute;
   /*background-image: linear-gradient(
     to right,
@@ -198,7 +198,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+ 
 }
  .context-grid .icon-wrapper{
 position: relative;
