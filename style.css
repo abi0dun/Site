@@ -184,7 +184,7 @@ body {
 }
 .headerNavBar .centerContext .context-grid {
   width: 100vw;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 200px);
   border-radius: 0%;
   top: 65px;
   position: absolute;
@@ -200,11 +200,11 @@ body {
   -webkit-backdrop-filter: blur(40px);
   z-index: 1000;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 35px;
 }
 .headerNavBar .centerContext .context-grid .icon-wrapper{
 position: relative;
