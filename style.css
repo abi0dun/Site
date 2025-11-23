@@ -5,9 +5,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --webkit-tap-highlight-color: none;
+  --webkit-tap-highlight-color: transparent;
   --webkit-touch-callout: none;
   user-select: none;
+  --webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  touch-action: manipulation;
 }
 
 /* Hacker-ish default font */
@@ -19,6 +24,7 @@ body {
 
 :root {
   /* light theme defaults */
+  --bg-icon-label: black;
   --bg-primary: #f5f7fa;
   --bg-secondary: #cc0055;
   --bg-tetiarry: #000000;
@@ -192,8 +198,8 @@ body {
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid var(--circle-border);
-  box-shadow: 0 0 8px var(--shadow-color);
+  border: 0px solid var(--circle-border);
+  box-shadow: 0 0 20px var(--shadow-color);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -310,6 +316,45 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     transform: rotate(360deg);
   }
 }
+
+.svg-icon{
+  width: 50px;
+  height: 50px;
+  transition: fill 0.4s ease;
+}
+.svg-icon path,
+.svg-icon circle,
+.svg-icon rect,
+.svg-icon line,
+.svg-icon polyline{
+  stroke: var(--bg-tettiary);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 3s ease;
+}
+
+.icon-wrapper:hover .svg-icon path,
+.icon-wrapper:hover .svg-icon circle,
+.icon-wrapper:hover .svg-icon rect,
+.icon-wrapper:hover .svg-icon line,
+.icon-wrapper:hover .svg-icon polyline{
+  stroke: var(--bg-secondary);
+  
+}
+
+.headerNavBar .centerContext .context-grid .icon-wrapper .Icon-label{
+  margin-top: 18px;
+  color: var(--bg-tettiary);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10 var(--bg-secondary);
+}
+
 @keyframes cyberBars {
   0% {
     --first: 0%;
