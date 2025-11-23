@@ -188,6 +188,7 @@ body {
   border-radius: 0%;
   top: 65px;
   position: absolute;
+  padding: 40px;
   /*background-image: linear-gradient(
     to right,
     var(--panel-glass-light),
