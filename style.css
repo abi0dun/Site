@@ -201,12 +201,31 @@ body {
   -webkit-backdrop-filter: blur(40px);
   z-index: 1000;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 35px;
+  
+  
 }
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.row:nth-child(1){
+  background-color: none;
+}
+
+.row:nth-child(2){
+  background-color: none;
+}
+
+.row:nth-child(3){
+  background-color: none;
+}
+
 .headerNavBar .centerContext .context-grid .icon-wrapper{
 position: relative;
 display: flex;
