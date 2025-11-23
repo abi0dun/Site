@@ -196,13 +196,12 @@ body {
   );*/
   background: transparent;
 
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 0px solid var(--circle-border);
-  box-shadow: 0 0 20px var(--shadow-color);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   z-index: 1000;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
@@ -353,6 +352,140 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   text-transform: uppercase;
   transition: all 0.3s ease;
   text-shadow: 0 0 10 var(--bg-secondary);
+}
+
+
+/* contact */
+
+/* about */
+
+.headerNavBar .centerContext .context-grid .icon-wrapper .about-icon .outer-ring {
+  transform-origin: center;
+  animation: rotateRing 15s linear infinite;
+}
+
+.about-icon .inner-ring {
+  transform-origin: center;
+  animation: rotateRing 10s linear infinite reverse;
+}
+
+.about-icon .data-node {
+  animation: pulseNode 2s ease-in-out infinite;
+}
+
+.about-icon .data-node:nth-child(n+6) { animation-delay: 0.5s; }
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseNode {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.icon-wrapper:hover .about-icon .outer-ring,
+.icon-wrapper:hover .about-icon .inner-ring {
+  animation-duration: 2s;
+}
+
+/* cancel */
+
+.cancel-icon .x-line {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: slashDraw 0.8s ease forwards;
+}
+
+.cancel-icon .x-line:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.cancel-icon .warning-ring {
+  animation: warnPulse 3s ease-in-out infinite;
+}
+
+@keyframes slashDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes warnPulse {
+  0%, 90%, 100% { opacity: 0.3; }
+  95% { opacity: 1; }
+}
+
+.icon-wrapper:hover .cancel-icon .warning-ring {
+  animation: warnFast 0.3s ease-in-out infinite;
+  stroke: #ff3366;
+}
+
+@keyframes warnFast {
+  0%, 100% { opacity: 0.5; stroke-width: 2; }
+  50% { opacity: 1; stroke-width: 3; }
+}
+
+
+/* Projects - Build */
+.projects-icon .grid-box {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: buildBox 0.6s ease forwards;
+}
+
+.projects-icon .grid-box:nth-child(1) { animation-delay: 0s; }
+.projects-icon .grid-box:nth-child(2) { animation-delay: 0.15s; }
+.projects-icon .grid-box:nth-child(3) { animation-delay: 0.3s; }
+.projects-icon .grid-box:nth-child(4) { animation-delay: 0.45s; }
+
+.projects-icon .cursor {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes buildBox {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* open source */
+
+.opensource-icon .branch {
+  stroke-dasharray: 6 4;
+  animation: dataFlow 1.5s linear infinite;
+}
+
+.opensource-icon .node-pulse {
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+.opensource-icon .node-pulse:nth-child(2) { animation-delay: 0.4s; }
+.opensource-icon .node-pulse:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes dataFlow {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.icon-wrapper:hover .opensource-icon .branch {
+  animation-duration: 0.4s;
+}
+
+.icon-wrapper:hover .opensource-icon .merge-glow {
+  animation: mergeGlow 0.4s ease infinite alternate;
+}
+
+@keyframes mergeGlow {
+  from { opacity: 0.5; }
+  to { opacity: 1; filter: drop-shadow(0 0 8px var(--accent)); }
 }
 
 @keyframes cyberBars {
