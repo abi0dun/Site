@@ -169,7 +169,7 @@ body {
 }
 
 .headerNavBar .centerContext {
-  position: absolute;
+  position: relative;
   width: 55px;
   height: 55px;
   border-radius: 50%;
