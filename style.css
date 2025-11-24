@@ -163,11 +163,15 @@ body {
 .headerNavBar .centerContext{
   outline: none;
   box-shadow: none;
+    --webkit-tap-highlight-color: transparent;
+  --webkit-touch-callout: none;
 }
 
 .headerNavBar .centerContext:focus{
   outline: none !important;
   box-shadow: none;
+    --webkit-tap-highlight-color: transparent;
+  --webkit-touch-callout: none;
 }
 
 .headerNavBar .centerContext {
@@ -175,7 +179,8 @@ body {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-
+    --webkit-tap-highlight-color: transparent;
+  --webkit-touch-callout: none;
   background-image: linear-gradient(
     to right,
     var(--panel-glass-light),
