@@ -160,6 +160,14 @@ body {
   box-shadow: 0 0 8px var(--shadow-color);
 }
 
+.headerNavBar .centerContext{
+  outline: none;
+}
+
+.headerNavBar .centerContext:focus{
+  outline: none !important;
+}
+
 .headerNavBar .centerContext {
   position: absolute;
   width: 55px;

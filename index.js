@@ -54,7 +54,8 @@ borderStroke.setAttribute("stroke", c)
 }
 initTheme('light', "grey");
 
-centerContext.addEventListener('click', ()=>{
+centerContext.addEventListener('click', (e)=>{
+    e.stopPropagation();
     if(!isContextOpen){
         contextBox.style.display = "flex";
         isContextOpen = true;
