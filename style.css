@@ -162,10 +162,12 @@ body {
 
 .headerNavBar .centerContext{
   outline: none;
+  box-shadow: none;
 }
 
 .headerNavBar .centerContext:focus{
   outline: none !important;
+  box-shadow: none;
 }
 
 .headerNavBar .centerContext {
