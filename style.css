@@ -13,6 +13,8 @@
   -ms-user-select: none;
   -o-user-select: none;
   touch-action: manipulation;
+  outline: none;
+  
 }
 
 /* Hacker-ish default font */
@@ -196,11 +198,10 @@ body {
 
   );*/
   background: transparent;
-
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   z-index: 1000;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

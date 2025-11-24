@@ -9,6 +9,8 @@ var biggest = document.getElementById("biggest");
 var smallM = window.matchMedia("(min-width: 400px)");
 var desktop = window.matchMedia("(min-width: 800px)");
 var tablet = window.matchMedia("(min-width: 600px)");
+var contextBox = document.getElementById("context-grid");
+var close = document.getElementById('cancel')
 const html = document.documentElement;
 var isLight = true;
 var isContextOpen = false;
@@ -53,5 +55,18 @@ borderStroke.setAttribute("stroke", c)
 initTheme('light', "grey");
 
 centerContext.addEventListener('click', ()=>{
-    console.log('i have been clicked')
+    if(!isContextOpen){
+        contextBox.style.display = "flex";
+        isContextOpen = true;
+        console.log(isContextOpen)
+    }
 })
+close.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    console.log("clicked")
+    if(isContextOpen){
+        contextBox.style.display = "none";
+        isContextOpen = false;
+    }
+})
+
