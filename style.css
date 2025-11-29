@@ -529,23 +529,22 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   flex-shrink: none;
 }
 
-/*
-.svg-image-holder{
-  width: 250px;
-  height: 300px;
-  background: red;
 
-} */
+.svg-image-holder{
+  width: 230px;
+  height: 300px;
+
+} 
 
 #imgSvg{
-  width: 220px;
+  width: 230px;
   height: 300px;
   display: block;
   background:red;
 }
 
 .threeD-name-holder{
-width: calc(100% - 230px);
+width: calc(100% - 240px);
 height: 300px;
 background: blue;
 

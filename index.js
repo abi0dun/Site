@@ -79,10 +79,10 @@ var ellipseClip = document.getElementById('ellipse-clip')
 var borderClip = document.getElementById('border-clip')
 
 if(smallM.matches){
-    image.style.width = "270px"
-    image.style.height = "320px"
-    image.setAttribute("x", "15")
-    image.setAttribute("y", "15")
+    image.style.width = "240px"
+    image.style.height = "300px"
+    image.setAttribute("x", "20")
+    image.setAttribute("y", "25")
     imgSvg.style.width = "280px";
     imgSvg.style.height = "350px"
     imageHolder.style.width = "280px";
