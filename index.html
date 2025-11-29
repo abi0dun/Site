@@ -226,7 +226,20 @@
 
         
     </div>
-  
+    <div class="img-name">
+      <div class="svg-image-holder">
+        <svg id="imgSvg">
+          <defs>
+            <clipPath id="ovalClip">
+              <ellipse id="ellipse-clip" cy="150" cx="125" ry="110" rx="80"/>
+            </clipPath>
+          </defs>
+          <ellipse id="border-clip" cy="150" cx="125" ry="110" rx="80" fill="none" stroke="yellow" stroke-width="20"/>
+          <image clip-path="url('#ovalClip')" id="image" href="img.jpg" width="220" height="270" x="30" y="30"/>
+        </svg>
+      </div>
+      <div class="threeD-name-holder"></div>
+    </div>
     <script src="index.js"></script>
     </div>
 </body>

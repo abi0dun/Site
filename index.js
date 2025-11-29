@@ -71,3 +71,34 @@ close.addEventListener('click', (e)=>{
     }
 })
 
+var imageHolder = document.querySelector('.svg-image-holder')
+var nameHolder = document.querySelector('.threeD-name-holder')
+var imgSvg = document.getElementById('imgSvg')
+var image = document.getElementById('image')
+var ellipseClip = document.getElementById('ellipse-clip')
+var borderClip = document.getElementById('border-clip')
+
+if(smallM){
+    image.style.width = "270px"
+    image.style.height = "320px"
+    image.setAttribute("x", "15")
+    image.setAttribute("y", "15")
+    imgSvg.style.width = "300px";
+    imgSvg.style.height = "350px"
+    imageHolder.style.width = "300px";
+    imageHolder.style.height = "350px";
+    nameHolder.style.width = "calc(100% - 310px)";
+    ellipseClip.setAttribute("cy", "175")
+    ellipseClip.setAttribute("cx", "150")
+    ellipseClip.setAttribute("ry", "130")
+    ellipseClip.setAttribute("rx", "100")
+    borderClip.setAttribute("cy", "175")
+    borderClip.setAttribute("cx", "150")
+    borderClip.setAttribute("ry", "130")
+    borderClip.setAttribute("rx", "100")
+}
+
+
+
+
+
