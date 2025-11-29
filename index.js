@@ -83,11 +83,11 @@ if(smallM){
     image.style.height = "320px"
     image.setAttribute("x", "15")
     image.setAttribute("y", "15")
-    imgSvg.style.width = "300px";
+    imgSvg.style.width = "280px";
     imgSvg.style.height = "350px"
-    imageHolder.style.width = "300px";
+    imageHolder.style.width = "280px";
     imageHolder.style.height = "350px";
-    nameHolder.style.width = "calc(100% - 310px)";
+    nameHolder.style.width = "calc(100% - 290px)";
     ellipseClip.setAttribute("cy", "175")
     ellipseClip.setAttribute("cx", "150")
     ellipseClip.setAttribute("ry", "130")
