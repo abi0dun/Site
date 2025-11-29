@@ -89,13 +89,13 @@ if(smallM.matches){
     imageHolder.style.height = "350px";
     nameHolder.style.width = "calc(100% - 290px)";
     ellipseClip.setAttribute("cy", "175")
-    ellipseClip.setAttribute("cx", "150")
-    ellipseClip.setAttribute("ry", "130")
-    ellipseClip.setAttribute("rx", "100")
+    ellipseClip.setAttribute("cx", "140")
+    ellipseClip.setAttribute("ry", "140")
+    ellipseClip.setAttribute("rx", "110")
     borderClip.setAttribute("cy", "175")
-    borderClip.setAttribute("cx", "150")
-    borderClip.setAttribute("ry", "130")
-    borderClip.setAttribute("rx", "100")
+    borderClip.setAttribute("cx", "140")
+    borderClip.setAttribute("ry", "140")
+    borderClip.setAttribute("rx", "110")
 }
 
 
