@@ -78,7 +78,7 @@ var image = document.getElementById('image')
 var ellipseClip = document.getElementById('ellipse-clip')
 var borderClip = document.getElementById('border-clip')
 
-if(smallM){
+if(smallM.matches){
     image.style.width = "270px"
     image.style.height = "320px"
     image.setAttribute("x", "15")

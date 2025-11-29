@@ -526,10 +526,11 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex: 0 0 auto;
+  flex-shrink: none;
 }
 
-/* .svg-image-holder{
+/*
+.svg-image-holder{
   width: 250px;
   height: 300px;
   background: red;
@@ -540,16 +541,21 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   width: 220px;
   height: 300px;
   display: block;
-  background: red;
+  background:red;
 }
 
 .threeD-name-holder{
 width: calc(100% - 230px);
 height: 300px;
 background: blue;
-flex-shrink: 0;
+
 }
 
+#img-svg{
+  width: 250px;
+  height: 200px;
+  display: block;
+}
 
 
 @keyframes mergeGlow {
