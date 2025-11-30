@@ -1,37 +1,71 @@
 var headerNavBar = document.getElementById("headerNavBar");
-var centerContext = document.getElementById("centerContext");
+var hambuger = document.getElementById("centerContext");
 var switchCircle = document.getElementById("switchCircle");
 var borderStroke = document.getElementById("borderStroke");
 var bulb = document.getElementById("light-bulb");
 var moon = document.getElementById("dark-moon");
 var svg1 = document.getElementById("svg1");
 var biggest = document.getElementById("biggest");
+var small = window.matchMedia("(min-width: 200px)");
 var smallM = window.matchMedia("(min-width: 400px)");
 var desktop = window.matchMedia("(min-width: 800px)");
 var tablet = window.matchMedia("(min-width: 600px)");
 var contextBox = document.getElementById("context-grid");
 var close = document.getElementById('cancel')
+var imageHolder = document.querySelector('.svg-image-holder')
+var nameHolder = document.querySelector('.threeD-name-holder')
+var svg2 = document.getElementById('svg2')
+var image = document.getElementById('image')
+var ellipseClip = document.getElementById('ellipse-clip')
+var borderClip = document.getElementById('border-clip')
 const html = document.documentElement;
 var isLight = true;
 var isContextOpen = false;
 
-svg1.setAttribute("width", "350");
-svg1.setAttribute("height", "80");
-svg1.setAttribute("viewBox", "0 0 350 80");
+function main(){
 
+
+
+    // Header Bar
+function headerBar(){
+const breakpoints = {
+    small: small,
+    smallM: smallM,
+    desktop: desktop,
+    tablet: tablet
+}
 if(smallM.matches){
     headerNavBar.style.width = "400px";
     biggest.style.width = "400px";
     biggest.style.clipPath = "url(#Mother-clip-box2)";
     svg1.setAttribute("width", "400");
     svg1.setAttribute("viewBox", "0 0 400 80");
-    
     borderStroke.setAttribute('d', 'M 40,0 A 40,40 0 0 0 0,40 40,40 0 0 0 40,80 H 170 A 30,30 0 0 1 200,50 30,30 0 0 1 230,80 H 400 V 40 A 20,20 0 0 1 380,60 20,20 0 0 1 360,40 20,20 0 0 1 380,20 20,20 0 0 1 400,40 V 0 Z')
-}else if(tablet.mathes){
+}else if(tablet.macthes){
 
+}else if(desktop.matches){
+    
+}else if (small.matches){
+svg1.setAttribute("width", "350");
+svg1.setAttribute("height", "80");
+svg1.setAttribute("viewBox", "0 0 350 80");
 }
 
- function sch() {
+for(const [name, Q] of Object.entries(breakpoints)){
+    Q.addEventListener("change", ()=>{
+        console.log("we are in", name)
+        headerBar();
+        var i =imageName();
+        i.S_G();
+    })
+}
+}
+headerBar()
+//header Bar End
+
+
+function themeS(){
+switchCircle.addEventListener("click", ()=>{
 isLight = !isLight;
 console.log(isLight);
 if(isLight){
@@ -46,22 +80,30 @@ moon.style.display = "none";
 //centerContext.style.background = "rgba(0, 0, 0, 0.8)";
 }
 //console.log(isLight);
-};
+});
+
 function initTheme(theme, c){
 html.setAttribute('data-theme', theme);
 console.log(c)
 borderStroke.setAttribute("stroke", c)
 }
 initTheme('light', "grey");
+}
+themeS()
 
-function aaa(){
+
+
+
+function Ham(){
+hambuger.addEventListener("click", ()=>{
     //e.stopPropagation();
     if(!isContextOpen){
         contextBox.style.display = "flex";
         isContextOpen = true;
         console.log(isContextOpen)
     }
-}
+})
+
 close.addEventListener('click', (e)=>{
     e.stopPropagation();
     console.log("clicked")
@@ -70,21 +112,19 @@ close.addEventListener('click', (e)=>{
         isContextOpen = false;
     }
 })
+}
+Ham()
 
-var imageHolder = document.querySelector('.svg-image-holder')
-var nameHolder = document.querySelector('.threeD-name-holder')
-var imgSvg = document.getElementById('imgSvg')
-var image = document.getElementById('image')
-var ellipseClip = document.getElementById('ellipse-clip')
-var borderClip = document.getElementById('border-clip')
+function imageName(){
+function S_G(){
 
-if(smallM.matches){
+    if(smallM.matches){
     image.style.width = "240px"
     image.style.height = "300px"
     image.setAttribute("x", "20")
     image.setAttribute("y", "25")
-    imgSvg.style.width = "280px";
-    imgSvg.style.height = "350px"
+    svg2.style.width = "280px";
+    svg2.style.height = "350px";
     imageHolder.style.width = "280px";
     imageHolder.style.height = "350px";
     nameHolder.style.width = "calc(100% - 290px)";
@@ -96,9 +136,18 @@ if(smallM.matches){
     borderClip.setAttribute("cx", "140")
     borderClip.setAttribute("ry", "140")
     borderClip.setAttribute("rx", "110")
+}else if(tablet.matches){
+
+}else if(desktop.matches){
+
+}
 }
 
+    // expose S_G so callers can do: var i = imageName(); i.S_G();
+    return { S_G: S_G };
 
+}
 
-
+}
+document.addEventListener("DOMContentLoaded", main)
 

@@ -536,7 +536,7 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 } 
 
-#imgSvg{
+#svg2{
   width: 230px;
   height: 300px;
   display: block;
@@ -546,15 +546,10 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 .threeD-name-holder{
 width: calc(100% - 240px);
 height: 300px;
-background: blue;
+background:green;
 
 }
 
-#img-svg{
-  width: 250px;
-  height: 200px;
-  display: block;
-}
 
 
 @keyframes mergeGlow {
