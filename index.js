@@ -116,9 +116,15 @@ close.addEventListener('click', (e)=>{
 Ham()
 
 function imageName(){
+    function Clockwise(){}
 function S_G(){
 
-    if(smallM.matches){
+console.log("Hi")
+
+    if(small.matches){
+        Clockwise();
+    }
+    else if(smallM.matches){
     image.style.width = "240px"
     image.style.height = "300px"
     image.setAttribute("x", "20")
@@ -136,6 +142,7 @@ function S_G(){
     borderClip.setAttribute("cx", "140")
     borderClip.setAttribute("ry", "140")
     borderClip.setAttribute("rx", "110")
+    clockwise();
 }else if(tablet.matches){
 
 }else if(desktop.matches){
