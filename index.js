@@ -6,10 +6,10 @@ var bulb = document.getElementById("light-bulb");
 var moon = document.getElementById("dark-moon");
 var svg1 = document.getElementById("svg1");
 var biggest = document.getElementById("biggest");
-var small = window.matchMedia("(min-width: 200px)");
-var smallM = window.matchMedia("(min-width: 400px)");
-var desktop = window.matchMedia("(min-width: 800px)");
-var tablet = window.matchMedia("(min-width: 600px)");
+var small = window.matchMedia("(min-width: 200px) and (max-width: 399px)");
+var smallM = window.matchMedia("(min-width: 400px) and (max-width: 599px)");
+var desktop = window.matchMedia("(min-width: 800px) and (max-width: 1199px)");
+var tablet = window.matchMedia("(min-width: 600px) and (max-width: 799px)");
 var contextBox = document.getElementById("context-grid");
 var close = document.getElementById('cancel')
 var imageHolder = document.querySelector('.svg-image-holder')
@@ -116,44 +116,73 @@ close.addEventListener('click', (e)=>{
 Ham()
 
 function imageName(){
-    function Clockwise(){}
+function ClockwiseCalc(cx, cy, rx, ry){
+
+}
 function S_G(){
 
-console.log("Hi")
+    console.log("Hi S_G")
 
     if(small.matches){
-        Clockwise();
-    }
-    else if(smallM.matches){
-    image.style.width = "240px"
-    image.style.height = "300px"
+    image.style.width = "190px"
+    image.style.height = "260px"
     image.setAttribute("x", "20")
-    image.setAttribute("y", "25")
-    svg2.style.width = "280px";
+    image.setAttribute("y", "20")
+    svg2.style.width = "230px";
+    svg2.style.height = "300px";
+    imageHolder.style.width = "230px";
+    imageHolder.style.height = "300px";
+    nameHolder.style.width = "calc(100% - 240px)";
+    ellipseClip.setAttribute("cy", "150")
+    ellipseClip.setAttribute("cx", "115")
+    ellipseClip.setAttribute("ry", "115")
+    ellipseClip.setAttribute("rx", "95")
+    borderClip.setAttribute("cy", "150")
+    borderClip.setAttribute("cx", "115")
+    borderClip.setAttribute("ry", "115")
+    borderClip.setAttribute("rx", "95")
+        ClockwiseCalc();
+    }
+     if(smallM.matches){
+        console.log("smaillM")
+    image.style.width = "260px"
+    image.style.height = "310px"
+    image.setAttribute("x", "15")
+    image.setAttribute("y", "20")
+    svg2.style.width = "290px";
     svg2.style.height = "350px";
-    imageHolder.style.width = "280px";
+    svg2.style.background = "blue";
+    imageHolder.style.width = "290px";
     imageHolder.style.height = "350px";
-    nameHolder.style.width = "calc(100% - 290px)";
+    nameHolder.style.width = "calc(100% - 300px)";
     ellipseClip.setAttribute("cy", "175")
-    ellipseClip.setAttribute("cx", "140")
+    ellipseClip.setAttribute("cx", "145")
     ellipseClip.setAttribute("ry", "140")
     ellipseClip.setAttribute("rx", "110")
     borderClip.setAttribute("cy", "175")
-    borderClip.setAttribute("cx", "140")
+    borderClip.setAttribute("cx", "145")
     borderClip.setAttribute("ry", "140")
     borderClip.setAttribute("rx", "110")
-    clockwise();
-}else if(tablet.matches){
+    ClockwiseCalc();
+}
 
-}else if(desktop.matches){
+if(tablet.matches){
 
 }
+if(desktop.matches){
+
 }
+
+}
+S_G()
+
 
     // expose S_G so callers can do: var i = imageName(); i.S_G();
     return { S_G: S_G };
 
 }
+
+imageName()
 
 }
 document.addEventListener("DOMContentLoaded", main)
