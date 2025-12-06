@@ -343,7 +343,7 @@ function SecondCalc(x, y, rx, ry) {
 
 function absS(S,angle,x,y,rx,ry){
    var s = -angle;
-    console.log(s);
+   // console.log(s);
 
     var rad = s * Math.PI / 180;
 
