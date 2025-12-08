@@ -452,7 +452,7 @@ gsap.to(Camera.position, {
 }
  else if(smallM.matches){
 gsap.to(Camera.position, {
-    z:7,
+    z:6.5,
     duration: 5,
     ease: "ease",
     value: 6
