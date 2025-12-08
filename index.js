@@ -402,8 +402,8 @@ function N_M(){
         const textGeometry = new THREE.TextGeometry('ABIODUN',
             {
                 font: font,
-                size: 1.5,
-                height: 0.7,
+                size: 1.0,
+                height: 0.5,
                 curveSegments: 24,
                 bevelEnabled: true,
                 bevelThickness: 0.15,
@@ -450,7 +450,7 @@ gsap.to(Camera.position, {
 })
 gsap.to(G.rotation, {
     y: Math.PI * 2,
-    duration: 10,
+    duration: 15,
     ease: "ease",
     repeat: 1,
     delay: 4,
