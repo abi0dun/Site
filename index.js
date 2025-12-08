@@ -452,7 +452,7 @@ gsap.to(G.rotation, {
     y: Math.PI * 2,
     duration: 15,
     ease: "ease",
-    repeat: 1,
+    
     delay: 4,
 })
 
