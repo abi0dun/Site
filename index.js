@@ -460,7 +460,7 @@ gsap.to(Camera.position, {
 }
 
 gsap.to(G.rotation, {
-    y: Math.PI * 2,
+    y: Math.PI * 1.85,
     duration: 15,
     ease: "ease",
     delay: 4,
