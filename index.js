@@ -442,17 +442,27 @@ function N_M(){
     .catch(error =>{
         console.error('Error Loading Font:', error)
     });
+
+if(small){
 gsap.to(Camera.position, {
-    z:10,
+    z:8,
     duration: 5,
     ease: "ease",
     value: 6
 })
+}else if(smallM){
+gsap.to(Camera.position, {
+    z:6,
+    duration: 5,
+    ease: "ease",
+    value: 6
+})
+}
+
 gsap.to(G.rotation, {
     y: Math.PI * 2,
     duration: 15,
     ease: "ease",
-    
     delay: 4,
 })
 
