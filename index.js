@@ -502,7 +502,7 @@ function S_G(){
     svg2.style.background = "transparent";
     imageHolder.style.width = "230px";
     imageHolder.style.height = "300px";
-    nameHolder.style.width = "calc(100% - 240px)";
+    nameHolder.style.width = "calc(100% - 230px)";
     ellipseClip.setAttribute("cy", 150)
     ellipseClip.setAttribute("cx", 115)
     ellipseClip.setAttribute("ry", 115)
@@ -527,7 +527,7 @@ function S_G(){
     svg2.style.background = "transparent";
     imageHolder.style.width = "290px";
     imageHolder.style.height = "350px";
-    nameHolder.style.width = "calc(100% - 300px)";
+    nameHolder.style.width = "calc(100% - 290px)";
     ellipseClip.setAttribute("cy", 175)
     ellipseClip.setAttribute("cx", 145)
     ellipseClip.setAttribute("ry", 140)
