@@ -173,8 +173,8 @@ var angle = h * 2 * Math.PI / 360
 //console.log(angle)
 var X = x + rx * Math.cos(angle)
 var Y = y + ry * Math.sin(angle)
-hour.setAttribute("cx", X)
-hour.setAttribute("cy", Y)
+hour.setAttribute("cx", Number(X))
+hour.setAttribute("cy", Number(Y))
 //console.log(x,y)
 }
 
@@ -262,8 +262,8 @@ function absM(M, angle, x, y, rx, ry) {
     var X = x + rx * Math.cos(rad);
     var Y = y + ry * Math.sin(rad);
 
-    min.setAttribute("cx", X);
-    min.setAttribute("cy", Y);
+    min.setAttribute("cx", Number(X));
+    min.setAttribute("cy", Number(Y));
 }
 
 function SecondCalc(x, y, rx, ry) {
@@ -340,7 +340,6 @@ function SecondCalc(x, y, rx, ry) {
         }
     }
 }
-
 function absS(S,angle,x,y,rx,ry){
    var s = -angle;
    // console.log(s);
@@ -350,14 +349,145 @@ function absS(S,angle,x,y,rx,ry){
     var X = x + rx * Math.cos(rad);
     var Y = y + ry * Math.sin(rad);
 
-    sec.setAttribute("cx", X);
-    sec.setAttribute("cy", Y);
+    sec.setAttribute("cx", Number(X));
+    sec.setAttribute("cy", Number(Y));
     
 }
 
 
+}
+
+function N_M(){
+    console.log("Hi N_M")
+    const canvas = document.getElementById('threeD-name-holder');
+    
+    const Scene = new THREE.Scene();
+
+    const Camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    Camera.position.z = 100;
+    
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0); // Set background to transparent
+
+    //lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    Scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(10, 10, 10);
+    Scene.add(directionalLight);
+
+    const pointLight1 = new THREE.PointLight(0x667eea, 2, 100);
+    pointLight1.position.set(-15, 10, 10);
+    Scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0x764ba2, 2, 100);
+    pointLight2.position.set(15, -10, 10);
+    Scene.add(pointLight2);
+
+    const G = new THREE.Group();
+    Scene.add(G);
+    //G.rotation.y = Math.PI / 2;
+    //Font
+
+    const Loader = new THREE.FontLoader();
+    const fontUrl = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_bold.typeface.json';
+
+    fetch(fontUrl)
+    .then(response => response.json())
+    .then(fontData =>{
+        const font = Loader.parse(fontData)
+        const textGeometry = new THREE.TextGeometry('ABIODUN',
+            {
+                font: font,
+                size: 1.5,
+                height: 0.7,
+                curveSegments: 24,
+                bevelEnabled: true,
+                bevelThickness: 0.15,
+                bevelSize: 0.1,
+                bevelOffset: 0,
+                bevelSegments: 10
+            }
+        );
+        textGeometry.center();
+
+        const vertexCount = textGeometry.attributes.position.count;
+        const colors = new Float32Array(vertexCount * 3)
+        for(let i = 0; i < vertexCount; i++){
+            const LTRX = textGeometry.attributes.position.getX(i);
+            const NormalizedX = (LTRX + 8)/16;
+            const color = new THREE.Color()
+            color.setHSL(0.65 + NormalizedX * 0.15, 0.7, 0.5);
+            colors[i * 3] = color.r;
+            colors[i * 3 + 1] = color.g;
+            colors[i * 3 + 2] = color.b
+        }
+        textGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const textMaterial = new THREE.MeshStandardMaterial({
+            vertexColors: true,
+            metalness: 0.6,
+            roughness: 0.2,
+            emissive: new THREE.Color(0x667eea),
+            emissiveIntensity: 0.2
+        })
+
+        const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+        G.rotation.y = Math.PI;
+        G.add(textMesh)
+    })
+    .catch(error =>{
+        console.error('Error Loading Font:', error)
+    });
+gsap.to(Camera.position, {
+    z:10,
+    duration: 5,
+    ease: "ease",
+    value: 6
+})
+gsap.to(G.rotation, {
+    y: Math.PI * 2,
+    duration: 10,
+    ease: "ease",
+    repeat: 1,
+    delay: 4,
+})
+
+
+const particleCount = 500;
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesPosition = new Float32Array(particleCount * 3);
+for(let i =0; i < particleCount; i++){
+    particlesPosition[i * 3] = (Math.random() - 0.5) * 20;
+    particlesPosition[i * 3 + 1] = (Math.random() - 0.5) * 20;
+    particlesPosition[i * 3 + 2] = (Math.random() - 0.5) * 20;
+}
+
+
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPosition, 3));
+const rootStyles = getComputedStyle(document.documentElement);
+const bgPrimary = rootStyles.getPropertyValue('--particles-bg').trim();
+
+const particlesMaterial = new THREE.PointsMaterial({
+    color: new THREE.Color(bgPrimary),
+    sizeAttenuation: true,
+    size: 0.05
+});
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+Scene.add(particles);
+
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(Scene, Camera);
+}
+animate();
 
 }
+N_M()
+
 function S_G(){
 
     console.log("Hi S_G")
@@ -373,14 +503,14 @@ function S_G(){
     imageHolder.style.width = "230px";
     imageHolder.style.height = "300px";
     nameHolder.style.width = "calc(100% - 240px)";
-    ellipseClip.setAttribute("cy", "150")
-    ellipseClip.setAttribute("cx", "115")
-    ellipseClip.setAttribute("ry", "115")
-    ellipseClip.setAttribute("rx", "95")
-    borderClip.setAttribute("cy", "150")
-    borderClip.setAttribute("cx", "115")
-    borderClip.setAttribute("ry", "115")
-    borderClip.setAttribute("rx", "95")
+    ellipseClip.setAttribute("cy", 150)
+    ellipseClip.setAttribute("cx", 115)
+    ellipseClip.setAttribute("ry", 115)
+    ellipseClip.setAttribute("rx", 95)
+    borderClip.setAttribute("cy", 150)
+    borderClip.setAttribute("cx", 115)
+    borderClip.setAttribute("ry", 115)
+    borderClip.setAttribute("rx", 95)
     setInterval(()=>{
     ClockwiseCalc(115,150,102.5,122.5);
     },1000)
@@ -398,14 +528,14 @@ function S_G(){
     imageHolder.style.width = "290px";
     imageHolder.style.height = "350px";
     nameHolder.style.width = "calc(100% - 300px)";
-    ellipseClip.setAttribute("cy", "175")
-    ellipseClip.setAttribute("cx", "145")
-    ellipseClip.setAttribute("ry", "140")
-    ellipseClip.setAttribute("rx", "110")
-    borderClip.setAttribute("cy", "175")
-    borderClip.setAttribute("cx", "145")
-    borderClip.setAttribute("ry", "140")
-    borderClip.setAttribute("rx", "110")
+    ellipseClip.setAttribute("cy", 175)
+    ellipseClip.setAttribute("cx", 145)
+    ellipseClip.setAttribute("ry", 140)
+    ellipseClip.setAttribute("rx", 110)
+    borderClip.setAttribute("cy", 175)
+    borderClip.setAttribute("cx", 145)
+    borderClip.setAttribute("ry", 140)
+    borderClip.setAttribute("rx", 110)
     setInterval(()=>{
         ClockwiseCalc(145,175,117.5,147.5 );
     },1000)

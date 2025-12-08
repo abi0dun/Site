@@ -25,7 +25,7 @@ body {
 
 
 :root {
-  /* light theme defaults */
+  --particles-bg: #000000;
   --bg-icon-label: black;
   --bg-primary: #f5f7fa;
   --bg-secondary: #cc0055;
@@ -35,7 +35,6 @@ body {
   --panel-glass-dark: rgba(48, 48, 107, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.25);
 
-  /* hacker mode enhancements */
   --neon: #00ff88;
   --scanline: rgba(0, 0, 0, 0.03);
 
@@ -46,7 +45,7 @@ body {
   --second: 100%;
 }
 html[data-theme='light'] {
-  /* LIGHT MODE — DEFAULT STYLE */
+  --particles-bg: #000000;
   --bg-primary: #f5f7fa;
   --bg-secondary: #cc0055;
   --bg-tettiary: #000000;
@@ -58,10 +57,11 @@ html[data-theme='light'] {
   --f: black;
 }
 
-/* DARK MODE — HACKER STYLE */
+
 html[data-theme='dark'] {
+  --particles-bg: #ffffff;
   --bg-primary: #0d0d0d;
-  --bg-secondary: #00ff88; /* hacking green */
+  --bg-secondary: #00ff88; 
   --circle-border: #00ff88;
   --bg-tettiary: #ffd700;
   --panel-glass-light: rgba(0, 255, 120, 0.05);
@@ -393,6 +393,25 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 /* contact */
 
+.headerNavBar .centerContext .context-grid .icon-wrapper .contact-icon .rect {
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: envelopeDraw 30s linear ;
+  
+
+}
+.headerNavBar .centerContext .context-grid .icon-wrapper .contact-icon .poly {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-linejoin: round;
+  animation: envelopeDraw 30s linear;
+}
+@keyframes envelopeDraw {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
 /* about */
 
 .headerNavBar .centerContext .context-grid .icon-wrapper .about-icon .outer-ring {
@@ -540,14 +559,14 @@ transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
   width: 230px;
   height: 300px;
   display: block;
-  background:red;
+  background:transparent;
 }
 
 .threeD-name-holder{
 width: calc(100% - 240px);
 max-width: 250px;
 height: 300px;
-background:green;
+background:transparent;
 
 }
 

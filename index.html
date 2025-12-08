@@ -71,7 +71,7 @@
           <div id="context-grid" class="context-grid">
 
           <div class="row top">
-            <div class="icon-wrapper">
+            <div class="icon-wrapper contact-icon">
               <div class="icon-frame">
                 <div class="rotating-ring"></div>
                 <div class="orbital-dot"></div>
@@ -81,8 +81,8 @@
                 <svg class="svg-icon" viewBox="0 0 64 64" role="img" aria-label="Mail Icon">
                   <title>MAIL ICON</title>
                   <desc>This is sa contact Icon</desc>
-                  <rect x="6" y="14" width="52" height="36" rx="3" ry="3" fill="none"/>
-                  <polyline points="7.25,15.25 32,35 56.75,15.25"/>
+                  <rect class="rect" x="6" y="14" width="52" height="36" rx="3" ry="3" fill="none"/>
+                  <polyline class="poly" points="7.25,15.25 32,35 56.75,15.25"/>
                   <line x1="8" y1="48.75" x2="25" y2="30"/>
                   <line x1="57.75" y1="50" x2="38" y2="30"/>
                 </svg>
@@ -241,9 +241,12 @@
         <circle id="sec" cx="115" cy="150" r="4" fill="var(--bg-tettiary)" opacity="1"/>
         </svg>
       </div>
-      <div class="threeD-name-holder"></div>
+      <canvas class="threeD-name-holder" id="threeD-name-holder"></canvas>
     </div>
     <script src="index.js"></script>
-    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/geometries/TextGeometry.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
