@@ -445,14 +445,13 @@ function N_M(){
 
 if(small){
 gsap.to(Camera.position, {
-    z:22,
+    z:9,
     duration: 5,
     ease: "ease",
 })
-}
- if(smallM){
+}else if(smallM){
 gsap.to(Camera.position, {
-    z:6,
+    z:6.5,
     duration: 5,
     ease: "ease",
     value: 6
