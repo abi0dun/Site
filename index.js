@@ -443,15 +443,16 @@ function N_M(){
         console.error('Error Loading Font:', error)
     });
 
-if(small){
+if(small.matches){
 gsap.to(Camera.position, {
     z:9,
     duration: 5,
     ease: "ease",
 })
-}else if(smallM){
+}
+ else if(smallM.matches){
 gsap.to(Camera.position, {
-    z:6.5,
+    z:7,
     duration: 5,
     ease: "ease",
     value: 6
