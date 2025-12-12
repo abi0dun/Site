@@ -1,3 +1,4 @@
+
 var headerNavBar = document.getElementById("headerNavBar");
 var hambuger = document.getElementById("centerContext");
 var switchCircle = document.getElementById("switchCircle");
@@ -358,7 +359,6 @@ function absS(S,angle,x,y,rx,ry){
 }
 
 function N_M(){
-    console.log("Hi N_M")
     const canvas = document.getElementById('threeD-name-holder');
     
     const Scene = new THREE.Scene();
@@ -569,6 +569,106 @@ S_G()
 
 imageName()
 
+
+        let currentQuoteIndex = 0;
+        let currentCharIndex = 0;
+        let isTyping = false;
+        let typingInterval;
+        let autoPlayTimeout;
+        const quotes = [
+            "I build systems that stay simple on the surface, powerful under the hood, and impossible to break through consistency.",
+            "Clean logic, precise execution, and silent optimization — that's how I turn ideas into stable, scalable software.",
+            "I don't just write code; I design structures, automate flows, and craft digital experiences that work flawlessly in the real world.",
+            "Every project is a puzzle, every bug a signal, every solution a commit — I create software that grows, adapts, and performs.",
+            "My craft is building reliable systems, improving workflows, and shipping products that feel smooth, fast, and intelligently engineered."
+        ];
+function QuoteWriter(){
+
+        if (isTyping) return;
+            
+            isTyping = true;
+            const textElement = document.getElementById('typewriterText');
+            const progressBar = document.getElementById('progressBar');
+            const currentQuote = quotes[currentQuoteIndex];
+            
+            textElement.textContent = '';
+            currentCharIndex = 0;
+            progressBar.style.width = '0%';
+
+            const typingSpeed = 40;
+
+            typingInterval = setInterval(() => {
+                if (currentCharIndex < currentQuote.length) {
+                    textElement.textContent += currentQuote.charAt(currentCharIndex);
+                    currentCharIndex++;
+                    
+                    const progress = (currentCharIndex / currentQuote.length) * 100;
+                    progressBar.style.width = progress + '%';
+                } else {
+                    clearInterval(typingInterval);
+                    isTyping = false;
+                    
+                    // Wait 3 seconds after finishing, then move to next
+                    autoPlayTimeout = setTimeout(() => {
+                        nextQuoteAuto();
+                    }, 3000);
+                }
+            }, typingSpeed);
+}
+QuoteWriter()
+updateQuoteNumber()
+function updateQuoteNumber() {
+            const num = (currentQuoteIndex + 1).toString().padStart(2, '0');
+            document.getElementById('quoteNumber').textContent = `[ ${num} / 05 ]`;
+        }
+
+        function nextQuoteAuto() {
+            if (isTyping) {
+                clearInterval(typingInterval);
+                isTyping = false;
+            }
+            clearTimeout(autoPlayTimeout);
+            
+            // Cycle through: 0,1,2,3,4,0,1,2,3,4...
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            
+            updateQuoteNumber();
+            QuoteWriter();
+        }
+
+function floating(){
+    const icons = ['⚡', '🔒', '💻', '🔧', '⚙️', '🔥', '💾', '🖥️', '📡', '🛡️', '⚔️', '🎯', '🔑', '💡', '🌐', '📊', '🚀', '⚛️', '🔮', '⭐'];
+    const fC = document.getElementById('floating-icons')
+    for(let i= 0; i < 50; i++){
+        const icon = document.createElement('div')
+        icon.className = "f-icon"
+        icon.textContent = icons[Math.floor(Math.random() * icons.length)]
+        icon.style.left = Math.random() * 100 + "%";
+        icon.style.animationDuration = (15 + Math.random() * 20) + "s"
+        icon.style.animationDelay = Math.random() * 5 + "s"
+        icon.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px')
+        fC.appendChild(icon)
+    }
+
+
+    const rC = document.getElementById('matrixRain');
+            const chars = '01';
+            for (let i = 0; i < 50; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDuration = (10 + Math.random() * 15) + 's';
+                column.style.animationDelay = Math.random() * 5 + 's';
+                
+                let text = '';
+                for (let j = 0; j < 20; j++) {
+                    text += chars[Math.floor(Math.random() * chars.length)];
+                }
+                column.textContent = text;
+                rC.appendChild(column);
+            }
+}
+floating()
 }
 document.addEventListener("DOMContentLoaded", main)
 
