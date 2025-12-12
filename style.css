@@ -55,11 +55,11 @@ body {
 html[data-theme='light'] {
   --text-color:rgba(22, 22, 22, .8);
   --c-border: rgba(255, 255, 255, 0.8);
-  --c-shadow: rgba(31, 38, 135, 0.37);
-  --c-i-shadow: rgba(255, 255, 255, 0.1);
-  --g-color: transparent
+  --c-shadow: rgba(31, 38, 135, 0.1);
+  --c-i-shadow: rgb(204, 0, 85, 0.3);
+  --g-color: transparent;
   --f-c: rgba(255, 255, 255, 0.3);
-  --gl-bg: rgba(255, 255, 255, 0.1);
+  --gl-bg: rgba(255, 255, 255, 0.05);
   --m-c: rgba(255, 255, 255, 0.4);
   --particles-bg: #000000;
   --bg-primary: #f5f7fa;
@@ -77,8 +77,9 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --text-color: #00ff88;
   --c-border: rgba(0, 255, 136, 0.2);
-  --c-shadow: rgba(255, 255, 255, 0.5);
-  --c-i-shadow: rgba(0, 255, 136, 0.8);
+  --c-shadow: rgba(255, 255, 255, 0.1);
+  --c-i-shadow: rgba(0, 255, 136, 0.3);
+  --g-color: rgba(0, 255, 136, 0.1);
   --f-c: rgba(0, 255, 136, 0.3);
   --gl-bg: rgba(0, 0, 0, 0.1);
   --m-c: rgba(255, 255, 255, 0.4);
