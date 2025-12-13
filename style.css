@@ -23,6 +23,7 @@ body {
 
 :root {
   --text-color:rgba(22, 22, 22, .8);
+  --bevel-color: rgba(255, 255, 255, 0.6);
   --c-border: rgba(255, 255, 255, 0.8);
   --c-shadow: rgba(31, 38, 135, 0.37);
   --c-i-shadow: rgba(255, 255, 255, 0.1);
@@ -47,6 +48,7 @@ body {
 }
 html[data-theme='light'] {
   --text-color:rgba(22, 22, 22, .8);
+  --bevel-color: rgba(255, 255, 255, 0.6);
   --progress-bg: rgba(255, 255, 255, 0.1);
   --progress-fill: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
   --progress-shadow: none;
@@ -71,6 +73,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --text-color: #00ff88;
+  --bevel-shadow: rgba(0, 255, 136, 0.3);
   --progress-bg: rgba(0, 255, 136, 0.1);
   --progress-fill: linear-gradient(90deg, rgba(0, 255, 136, 0.5), rgba(0, 255, 136, 1));
   --progress-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
@@ -771,4 +774,32 @@ background:transparent;
             right: 10px;
             border-left: none;
             border-top: none;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            font-weight: bold;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-color);
+            animation: statusPulse 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
