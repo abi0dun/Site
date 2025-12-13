@@ -48,8 +48,8 @@ body {
 }
 html[data-theme='light'] {
   --text-color:rgba(22, 22, 22, .8);
-  --bevel-color: rgba(255, 255, 255, 0.6);
-  --progress-bg: rgba(255, 255, 255, 0.1);
+  --bevel-color: rgba(0, 0, 0, 0.6);
+  --progress-bg: rgba(0, 0, 0, 0.6);
   --progress-fill: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
   --progress-shadow: none;
   --c-border: rgba(0, 0, 0, 0.2);
@@ -690,7 +690,7 @@ background:transparent;
 }
 
 .typewriter-section {
-            min-height: 400px;
+            min-height: 350px;
         }
 
   .typewriter-text {
