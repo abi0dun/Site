@@ -681,7 +681,7 @@ background:transparent;
   -webkit-backdrop-filter: blur(1px);
   color: var(--text-color);
   backdrop-filter: blur(3px);
-  /* overflow: hidden; */
+  overflow: hidden;
   position: relative;
   border-radius: 20px;
   padding: 40px;
@@ -743,6 +743,74 @@ background:transparent;
       transition: width 0.3s ease;
       border-radius: 2px;
   }
+
+  .description-section {
+            position: relative;
+            padding: 50px;
+        }
+
+        /* Animated corner bevels */
+        .description-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            border-top: 3px solid var(--bevel-color);
+            border-left: 3px solid var(--bevel-color);
+            border-radius: 20px 0 0 0;
+            /* box-shadow: 0 0 20px var(--bevel-shadow); */
+            transition: all 0.5s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .description-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            border-bottom: 3px solid var(--bevel-color);
+            border-right: 3px solid var(--bevel-color);
+            border-radius: 0 0 20px 0;
+            /* box-shadow: 0 0 20px var(--bevel-shadow); */
+            transition: all 0.5s ease;
+            animation: pulse 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .description-title {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            animation: glitchText 5s infinite;
+        }
+
+        @keyframes glitchText {
+            0%, 90%, 100% { transform: translate(0); }
+            91% { transform: translate(-2px, 2px); }
+            92% { transform: translate(2px, -2px); }
+            93% { transform: translate(-2px, -2px); }
+            94% { transform: translate(2px, 2px); }
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: justify;
+            color: var(--text-color);
+            text-shadow: 0 0 5px var(--text-shadow);
+        }
+
 
   .corner-decor {
             position: absolute;
