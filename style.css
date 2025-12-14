@@ -689,7 +689,7 @@ background:transparent;
 }
 
 .glass-card:hover{
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0 12px 40px 0 var(--c-shadow), inset 0 0 30px var(--c-i-shadow), 0 0 60px var(--g-shadow);
 }
 
@@ -786,7 +786,7 @@ background:transparent;
         }
 
         .description-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 25px;
             font-weight: bold;
             text-transform: uppercase;
@@ -805,7 +805,7 @@ background:transparent;
 
         .description-text {
             font-size: 1.1rem;
-            line-height: 2;
+            line-height: 1.8;
             text-align: justify;
             color: var(--text-color);
             text-shadow: 0 0 5px var(--text-shadow);
