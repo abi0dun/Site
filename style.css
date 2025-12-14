@@ -49,7 +49,7 @@ body {
 html[data-theme='light'] {
   --text-color:rgba(22, 22, 22, .8);
   --scanline-color: currentColor;
-  --holo-color: rgba(0, 0, 0, 0.05);
+  --holo-color: rgba(0, 0, 0, 0.1);
   --bevel-color: rgba(0, 0, 0, 0.6);
   --progress-bg: rgba(0, 0, 0, 0.6);
   --progress-fill: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
