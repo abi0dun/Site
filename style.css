@@ -755,7 +755,7 @@ background:transparent;
   position: relative;
   width: 90%;
   max-width: 800px;
-  padding: 50px;
+  padding: 40px;
 }
 
 .description-section::before {
@@ -794,7 +794,7 @@ background:transparent;
 }
 
 .description-title {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   margin-bottom: 25px;
   font-weight: bold;
   text-transform: uppercase;
