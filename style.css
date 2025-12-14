@@ -48,6 +48,7 @@ body {
 }
 html[data-theme='light'] {
   --text-color:rgba(22, 22, 22, .8);
+  --grid-bg: rgba(255, 255, 255, 0.8);
   --scanline-color: currentColor;
   --holo-color: rgba(0, 0, 0, 0.1);
   --bevel-color: rgba(0, 0, 0, 0.6);
@@ -75,6 +76,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --text-color: #00ff88;
+  --grid-bg: rgba(0, 0, 0, 0.8);
   --scanline-color: var(--text-color);
   --holo-color: rgba(0, 255, 136, 0.1);
   --bevel-shadow: rgba(0, 255, 136, 0.3);
@@ -221,9 +223,9 @@ body {
 }
 .headerNavBar .centerContext .context-grid {
   width: 100vw;
-  height: calc(100vh - 200px);
+  height: 100vh;
   border-radius: 0%;
-  top: 65px;
+  top: -80px;
   position: absolute;
   padding: 40px;
   /*background-image: linear-gradient(
@@ -232,9 +234,9 @@ body {
     var(--panel-glass-dark)
 
   );*/
-  background: transparent;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  background: var(--grid-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   z-index: 1000;
   display: none;
   flex-direction: column;
