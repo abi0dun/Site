@@ -47,7 +47,7 @@ body {
   --second: 100%;
 }
 html[data-theme='light'] {
-  --footer-bg: rgba(0, 0, 0, 0.05);
+  --footer-bg: rgba(204, 0, 85, .5);
   --text-secondary: #e0e7ff;
   --text-muted: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.2);
@@ -80,11 +80,11 @@ html[data-theme='light'] {
 
 
 html[data-theme='dark'] {
-  --footer-bg: rgba(255, 255, 255, 0.05);
+  --footer-bg: rgba(0, 255, 136,.5);
   --text-secondary: #64ffda;
   --text-muted: rgba(100, 255, 218, 0.7);
-            --border-color: rgba(0, 255, 136, 0.2);
-            --glow: rgba(0, 255, 136, 0.5);
+  --border-color: rgba(0, 255, 136, 0.2);
+  --glow: rgba(0, 255, 136, 0.5);
   --text-color: #00ff88;
   --grid-bg: rgba(0, 0, 0, 0.8);
   --scanline-color: var(--text-color);
@@ -935,7 +935,7 @@ background:transparent;
 }
 
 .footer-parent{
-  margin-top: 50px;
+  /* margin-top: 50px; */
   width: 100%;
 }
 .wave-container{
@@ -943,6 +943,7 @@ background:transparent;
   height: 150px;
   overflow: hidden;
   position: relative;
+  bottom: 0px;
 }
 .wave-section{
   position: absolute;
@@ -955,7 +956,7 @@ background:transparent;
 }
 .footer-container{
   width: 100%;
-  background: red;
+  background: var(--footer-bg);
 }
 
 .footer-grid {
