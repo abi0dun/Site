@@ -993,7 +993,7 @@ background:transparent;
 }
 
 .node:not(:first-child) {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .node.left {
