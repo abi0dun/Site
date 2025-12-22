@@ -722,15 +722,16 @@ background:transparent;
 .typewriter-section {
   position: relative;
   left: 20%;
-  width: 60%;
+  width: 70%;
+  height: 350px;
   max-width: 800px;
   min-height: 350px;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 380px) {
   .typewriter-section {
-    width: 75%;
+    /* width: 80%; */
   }
   
 }
