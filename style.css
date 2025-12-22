@@ -968,11 +968,11 @@ background:transparent;
 .v{
   position: absolute;
   top: 0;
-  left: 34.5%;
+  left: calc(20% - 6px);
   width: calc(30% + 6px);
   height: 6px;
   background: linear-gradient(to bottom, #0000ff, #6c6cfd);
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
 }
 
 .tree-line {
