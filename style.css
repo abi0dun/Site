@@ -1012,10 +1012,11 @@ background:transparent;
   display: inline-block;
   color: white;
   background: #020617;
-  padding: 14px 20px;
+  padding: 15px 10px;
   border-radius: 10px;
   border: 1px solid blue;
   position: relative;
+  width: 150px;
   min-width: 200px;
 }
 
@@ -1024,7 +1025,7 @@ background:transparent;
   position: absolute;
   top: 50%;
   right: -40px;
-  width: 40px;
+  width: 30px;
   height: 2px;
   background: blue;
 }
@@ -1033,7 +1034,7 @@ background:transparent;
   position: absolute;
   top: 50%;
   left: -40px;
-  width: 40px;
+  width: 30px;
   height: 2px;
   background: blue;
 }
