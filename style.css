@@ -1018,6 +1018,7 @@ background:transparent;
   position: relative;
   width: 90%;
   max-width: 200px;
+  text-align: center;
 }
 
 .node.left .content::after {
