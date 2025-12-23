@@ -1148,7 +1148,7 @@ background:transparent;
             left: -12px;
         }
 
-        /* Footer Bottom */
+        
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
@@ -1162,7 +1162,7 @@ background:transparent;
         }
 
 
-        /* Responsive Design */
+        
         @media (max-width: 1024px) {
             .footer-grid {
                 grid-template-columns: 1.5fr 1fr 1fr;
