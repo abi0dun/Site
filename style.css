@@ -1016,8 +1016,8 @@ background:transparent;
   border-radius: 10px;
   border: 1px solid blue;
   position: relative;
-  width: 150px;
-  min-width: 200px;
+  width: 90%;
+  max-width: 200px;
 }
 
 .node.left .content::after {
@@ -1025,7 +1025,7 @@ background:transparent;
   position: absolute;
   top: 50%;
   right: -40px;
-  width: 30px;
+  width: 40px;
   height: 2px;
   background: blue;
 }
@@ -1034,7 +1034,7 @@ background:transparent;
   position: absolute;
   top: 50%;
   left: -40px;
-  width: 30px;
+  width: 40px;
   height: 2px;
   background: blue;
 }
